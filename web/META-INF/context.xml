@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Context reloadable="true">
+    <Resource
+            name="mysql/hotel"
+            type="javax.sql.DataSource"
+            maxActive="20"
+            maxIdle="2"
+            maxwait="5000"
+            username="root"
+            password="mysql"
+            url="jdbc:mysql://localhost:3306/hotel"
+            driverClassName="com.mysql.jdbc.Driver"
+    />
+</Context>
