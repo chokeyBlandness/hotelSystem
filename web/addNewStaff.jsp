@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="css/normalStyleSheet.css">
 </head>
 <body>
+<div>
+    <%@include file="menuBar.jsp"%>
+</div>
     <div class="normalFormat" ng-app="">
         <form action="addNewStaffForm" method="post" name="addNewStaffForm">
             <p>staff id:</p>

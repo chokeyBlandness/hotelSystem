@@ -15,9 +15,14 @@
 <body>
     <div class="normalFormat">
         <p style="color: red">${secondLoginMessage}</p>
-        <form action="secondLoginForm" method="post">
+        <form action="secondLoginForm" method="post" name="secondLoginForm">
             <p>second password:</p>
-            <input type="password" required name="secondPassword"/><br/>
+            <input type="password" required
+                   ng-class="{'error':secondLoginForm.secondPassword.$invalid &&
+                   secondLoginForm.secondPassword.$touched}"
+                   name="secondPassword"/>
+            <label ng-if="secondLoginForm.secondPassword.$invalid &&
+                   secondLoginForm.secondPassword.$touched">不能为空</label><br/>
             <input class="btn btn-default" type="submit" value="submit"/>
         </form>
     </div>

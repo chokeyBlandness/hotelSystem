@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/normalStyleSheet.css"/>
 </head>
 <body>
+<div>
+    <%@include file="menuBar.jsp"%>
+</div>
     <div class="normalFormat">
         <form action="findIndentByIdentificationForm" method="post">
             <p>入住人身份证号：</p>

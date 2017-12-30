@@ -28,14 +28,18 @@
         <form action="loginForm" method="post" name="loginForm">
             <p>account:</p>
             <input type="text" name="account" required
-                   ng-model="account"
+                   ng-model="account" placeholder="请输入您的账号"
                    ng-class="{'error':loginForm.account.$invalid &&
-                   loginForm.account.$touched}"/><br/>
+                   loginForm.account.$touched}"/>
+            <label ng-if="loginForm.account.$invalid &&
+                   loginForm.account.$touched">不能为空</label><br/>
             <p>password:</p>
             <input type="password" name="password" required
-                   ng-model="password"
+                   ng-model="password" placeholder="请输入您的密码"
                    ng-class="{'error':loginForm.password.$invalid &&
-                   loginForm.password.$touched}"/><br/>
+                   loginForm.password.$touched}"/>
+            <label ng-if="loginForm.password.$invalid &&
+                   loginForm.password.$touched">不能为空</label><br/>
             <input class="btn btn-default" type="submit" value="提交" ng-disabled="loginForm.$invalid"/>
             <input class="btn btn-default" type="reset" value="重置"/>
         </form>
