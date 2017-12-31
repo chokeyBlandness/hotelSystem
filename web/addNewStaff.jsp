@@ -18,6 +18,7 @@
     <%@include file="menuBar.jsp"%>
 </div>
     <div class="normalFormat" ng-app="">
+        <p style="color: red">${addStaffMesaage}</p>
         <form action="addNewStaffForm" method="post" name="addNewStaffForm">
             <p>staff id:</p>
             <input type="text" name="staffId" ng-model="staffId"

@@ -4,6 +4,7 @@ import DAO.ConnectHotelDAO;
 import model.Administor;
 import model.Staff;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,17 @@ import java.io.IOException;
 public class AddNewStaffServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String staffId=request.getParameter("staffId");
+
+        ConnectHotelDAO connectHotelDAO=new ConnectHotelDAO();
+        Staff foundStaff = connectHotelDAO.staffFindById(staffId);
+        if (foundStaff!=null){
+            String addStaffMessage="exist staff!";
+            request.setAttribute("addStaffMessage",addStaffMessage);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("addNewStaff.jsp");
+            requestDispatcher.forward(request,response);
+            return;
+        }
+
         String staffPassword=request.getParameter("staffPassword");
         String staffName=request.getParameter("staffName");
         String staffIdentification=request.getParameter("staffIdentification");
@@ -36,10 +48,9 @@ public class AddNewStaffServlet extends HttpServlet {
         staffAdministor.setAdministorlevel("staff");
         staffAdministor.setPersonalIdentification(staffIdentification);
 
-        ConnectHotelDAO connectHotelDAO=new ConnectHotelDAO();
         connectHotelDAO.insertNewStaff(newStaff);
         connectHotelDAO.insertNewNormalAdministor(staffAdministor);
-        response.sendRedirect("showRooms.jsp");
+        response.sendRedirect("successRefresh.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -24,7 +24,7 @@
         <a href="register.jsp">注册</a>
     </div>
     <div class="form-group normalFormat" ng-app="">
-        ${requestScope.loginMessage}
+        <p style="color: red">${requestScope.loginMessage}</p>
         <form action="loginForm" method="post" name="loginForm">
             <p>account:</p>
             <input type="text" name="account" required

@@ -105,6 +105,14 @@
         <servlet-name>CheckOutServlet</servlet-name>
         <url-pattern>/checkOutForm</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteAdministorServlet</servlet-name>
+        <servlet-class>controller.managerPerform.DeleteAdministorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteAdministorServlet</servlet-name>
+        <url-pattern>/deleteAdministorForm</url-pattern>
+    </servlet-mapping>
 
 
 

@@ -15,7 +15,7 @@ public class CheckOutServlet extends HttpServlet {
         String roomId=request.getParameter("checkOutRoomId");
         ConnectHotelDAO connectHotelDAO=new ConnectHotelDAO();
         connectHotelDAO.checkOut(roomId);
-        response.sendRedirect("searchAllRooms.jsp");
+        response.sendRedirect("successRefresh.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -12,6 +12,11 @@
     <script src="js/angular.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/normalStyleSheet.css">
+    <style>
+        a{
+            font-size: 32px;
+        }
+    </style>
 </head>
 <body>
 <div>

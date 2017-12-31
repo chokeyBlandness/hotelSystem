@@ -37,11 +37,12 @@
                 </div>
 
                     <div ng-if="${sessionScope.account!=null}">
-                        <h1>welcome:${sessionScope.account}</h1><br/>
+                        <h1 style="color: #d58512;">welcome:${sessionScope.account}</h1><br/>
 
                         <div  ng-if="${sessionScope.accountLevel=='manager'}">
                             <a class="navbar-brand" href="searchAllRooms.jsp">所有房间状态</a>
-                            <a class="navbar-brand" href="addNewStaff.jsp">添加工作人员</a><br/>
+                            <a class="navbar-brand" href="addNewStaff.jsp">添加工作人员</a>
+                            <a class="navbar-brand" href="deleteAdministor.jsp">删除账号</a><br/>
                         </div>
 
                         <div ng-if="${sessionScope.accountLevel=='manager'||sessionScope.accountLevel=='staff'}">

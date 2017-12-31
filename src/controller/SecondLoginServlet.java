@@ -47,7 +47,7 @@ public class SecondLoginServlet extends HttpServlet {
                     return;
                 }//to manager performance
                 else{
-                    response.sendRedirect("searchAllRooms.jsp");
+                    response.sendRedirect("index.jsp");
                     return;
                 }//to ...
             }else {
