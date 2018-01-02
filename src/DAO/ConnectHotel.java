@@ -41,7 +41,8 @@ public class ConnectHotel implements DatabaseConnection{
     @Override
     public ResultSet allAdministor() {
         try {
-            preparedStatement=connection.prepareStatement("SELECT * FROM normalAdministor");
+            preparedStatement=connection.prepareStatement("SELECT * FROM normalAdministor " +
+                    "ORDER BY AdministorLevel");
             return preparedStatement.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -168,7 +169,7 @@ public class ConnectHotel implements DatabaseConnection{
     public ResultSet indentFindByOrderAccount(String orderAccount) {
         try {
             preparedStatement=connection.prepareStatement("SELECT * FROM indent " +
-                    "WHERE orderAccount=?");
+                    "WHERE orderAccount=? ORDER BY checkInTime,indentStatus DESC");
             preparedStatement.setString(1,orderAccount);
             return preparedStatement.executeQuery();
         } catch (SQLException e) {

@@ -17,6 +17,7 @@
     <div>
         <%@include file="menuBar.jsp"%>
     </div>
+    <p style="font-size: 40px" ng-if="${sessionScope.indent==null}">没有订单</p>
     <div>
         <table class="table table-bordered table-hover">
             <tr>
@@ -85,11 +86,23 @@
                     <td>${rooms.price}</td>
                     <td><button type="submit" name="allocateRoom"
                                 value="${rooms.roomId}" class="btn btn-primary"
-                                ng-if="${rooms.roomStatus=='empty'}">定房</button></td>
+                                ng-if="${rooms.roomStatus=='empty'}"
+                                onclick="return deleteConfirm()">定房</button></td>
                 </tr>
             </c:forEach>
         </table>
         </form>
     </div>
+
+    <script>
+        function deleteConfirm() {
+            var m="确定入住此房吗？";
+            if (confirm(m)==true){
+                return true;
+            }else {
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

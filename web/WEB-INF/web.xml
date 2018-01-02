@@ -159,6 +159,14 @@
         <filter-name>identListFilter</filter-name>
         <url-pattern>/indentList.jsp</url-pattern>
     </filter-mapping>
+    <filter>
+        <filter-name>SearchAllAdministorFilter</filter-name>
+        <filter-class>controller.managerPerform.SearchAllAdministorFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SearchAllAdministorFilter</filter-name>
+        <url-pattern>/deleteAdministor.jsp</url-pattern>
+    </filter-mapping>
 
 
 

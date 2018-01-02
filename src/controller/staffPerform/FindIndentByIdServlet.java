@@ -21,7 +21,10 @@ public class FindIndentByIdServlet extends HttpServlet {
         ArrayList<Indent> indents=connectHotelDAO.indentFindByIdentification(personId);
         request.setAttribute("indentList",indents);
         if (indents==null||indents.size()==0){
-            response.sendRedirect("index.jsp");
+            request.getSession().removeAttribute("indent");
+            request.getSession().removeAttribute("proportyRooms");
+            request.removeAttribute("roomList");
+            response.sendRedirect("allocateRoom.jsp");
             return;
         }
         Indent indent=indents.get(0);

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet(name = "DeleteAdministorServlet")
 public class DeleteAdministorServlet extends HttpServlet {
@@ -30,7 +31,10 @@ public class DeleteAdministorServlet extends HttpServlet {
                 return;
             }
         }
+        connectHotelDAO=new ConnectHotelDAO();
+        ArrayList<Administor> allAdministors=connectHotelDAO.allAdministor();
         request.setAttribute("deleteMessage",deleteMessage);
+        request.setAttribute("allAdministors",allAdministors);
         RequestDispatcher requestDispatcher=request.getRequestDispatcher("deleteAdministor.jsp");
         requestDispatcher.forward(request,response);
     }

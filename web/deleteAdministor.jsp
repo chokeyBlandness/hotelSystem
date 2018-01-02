@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -17,14 +18,30 @@
         <%@include file="menuBar.jsp"%>
     </div>
     <div>
-        <p style="color: red">${deleteMessage}</p>
-        <form action="deleteAdministorForm" class="form-group normalFormat" method="post">
-            <p>delete administor</p>
-            <input type="text" required name="deleteAccount" placeholder="请输入你要删除的账号"/><br/>
-            <input type="submit" class="btn btn-danger" onclick="deleteConfirm()" value="删除"/>
+        <p style="font-size: 40px;color: red">${deleteMessage}</p>
+        <form action="deleteAdministorForm" class="form-group" method="post">
+
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>账号</td>
+                    <td>用户名</td>
+                    <td>账号级别</td>
+                </tr>
+                <c:forEach var="administor" items="${allAdministors}">
+                    <tr>
+                        <td>${administor.administorAccount}</td>
+                        <td>${administor.username}</td>
+                        <td>${administor.administorlevel}</td>
+                        <td><button class="btn btn-danger"
+                                name="deleteAccount" type="submit"
+                                value="${administor.administorAccount}"
+                                onclick="return deleteConfirm()">删除</button></td>
+                    </tr>
+                </c:forEach>
+            </table>
+
         </form>
     </div>
-
     <script>
         function deleteConfirm() {
             var m="确定删除账号吗？";
@@ -34,6 +51,7 @@
                 return false;
             }
         }
+
     </script>
 </body>
 </html>
