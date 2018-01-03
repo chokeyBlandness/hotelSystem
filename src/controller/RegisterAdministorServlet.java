@@ -32,7 +32,7 @@ public class RegisterAdministorServlet extends HttpServlet {
         ConnectHotelDAO connectHotelDAO=new ConnectHotelDAO();
         connectHotelDAO.insertNewNormalAdministor(newAdministor);
         connectHotelDAO.insertNewNormalAdministor(newAdministor);
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("successRefresh.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

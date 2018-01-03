@@ -19,8 +19,18 @@
         <form action="checkOutForm" method="post">
             <p>房间号：</p>
             <input type="text" name="checkOutRoomId" required/>
-            <input class="btn btn-danger" type="submit" value="退房"/>
+            <input class="btn btn-danger" type="submit" onclick="return checkOutConfirm()" value="退房"/>
         </form>
     </div>
+    <script>
+        function checkOutConfirm() {
+            var m="确定退房吗？";
+            if (confirm(m)==true){
+                return true;
+            }else {
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

@@ -21,7 +21,7 @@ public class AllocateRoomServlet extends HttpServlet {
         connectHotelDAO.checkIn(allocatedRoom,indent.getCheckOutTime());
         connectHotelDAO=new ConnectHotelDAO();
         connectHotelDAO.finishIndent(indent.getIndentNumber());
-        response.sendRedirect("searchAllRooms.jsp");
+        response.sendRedirect("successRefresh.html");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
